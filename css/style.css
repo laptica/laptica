@@ -395,3 +395,11 @@ input, select, textarea {
         display: block;
     }
 }
+
+@media (max-width: 475px){
+    .help-section .container{
+        width: 90%;
+
+
+    }
+}
