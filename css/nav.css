@@ -1,0 +1,60 @@
+/* Header */
+.site-header {
+    background: var(--primary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.logo {
+    color: var(--light);
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logo a{
+    text-decoration: none;
+    color: var(--light);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--light);
+    transition: width 0.3s ease;
+}
+
+
+/* Get Quote Button */
+
+.nav-links li a .quote-btn{
+    color: var(--primary);
+}
+
+

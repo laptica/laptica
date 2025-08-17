@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptica</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {font-family: "Segoe UI", sans-serif;}
+
+        /* Navbar */
+        .navbar {
+            background:#ff6b00;
+            color:#fff;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0.8rem 2rem;
+            position:sticky;
+            top:0;
+            z-index:1000;
+            transition:box-shadow .3s ease;
+        }
+        .navbar.scrolled {
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+        }
+        .logo {
+            font-size:1.5rem;
+            font-weight:bold;
+            letter-spacing:1px;
+        }
+
+        /* Nav Links */
+        .nav-links {
+            list-style:none;
+            display:flex;
+            gap:1.5rem;
+        }
+        .nav-links a {
+            color:#fff;
+            text-decoration:none;
+            font-weight:500;
+            transition:color .3s ease;
+        }
+        .nav-links a:hover {color:#222;}
+
+        /* CTA */
+        .cta {
+            background:#fff;
+            color:#ff6b00;
+            padding:0.5rem 1rem;
+            border-radius:20px;
+            font-weight:600;
+            text-decoration:none;
+            transition:background .3s ease;
+        }
+        .cta:hover {background:#f1f1f1;}
+
+        /* Burger */
+        .burger {
+            display:none;
+            font-size:1.6rem;
+            cursor:pointer;
+        }
+
+        /* Mobile */
+        @media(max-width:768px){
+            .nav-links {
+                position:absolute;
+                top:70px;
+                right:0;
+                background:#ff6b00;
+                flex-direction:column;
+                width:200px;
+                height:0;
+                overflow:hidden;
+                transition:height .3s ease;
+            }
+            .nav-links.open {
+                height:240px;
+            }
+            .cta {margin:1rem 0;}
+            .burger {display:block;}
+        }
+
+        /* Hero Section */
+        .hero {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:90vh;
+            background:linear-gradient(to right, #ff6b00, #ff8c42);
+            color:#fff;
+            text-align:center;
+            padding:2rem;
+        }
+        .hero h1 {
+            font-size:2.5rem;
+            margin-bottom:1rem;
+        }
+        .hero p {
+            font-size:1.2rem;
+            margin-bottom:2rem;
+        }
+        .hero .hero-btn {
+            background:#fff;
+            color:#ff6b00;
+            padding:0.8rem 1.5rem;
+            border-radius:30px;
+            font-weight:600;
+            text-decoration:none;
+            transition:background .3s ease;
+        }
+        .hero .hero-btn:hover {background:#f1f1f1;}
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="logo">Laptica</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#shop" class="cta">Shop Now</a></li>
+    </ul>
+    <div class="burger" id="burger"><i class="fas fa-bars"></i></div>
+</nav>
+
+<section class="hero">
+    <div>
+        <h1>Welcome to Laptica</h1>
+        <p>Your trusted source for premium laptops & gadgets in Ghana.</p>
+        <a href="#shop" class="hero-btn">Explore Products</a>
+    </div>
+</section>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('nav-links');
+    const icon = burger.querySelector('i');
+
+    // Scroll shadow
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Burger toggle
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+</script>
+
+</body>
+</html>

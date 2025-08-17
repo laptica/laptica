@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptica - Your Tech Buddy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container flex-between">
+        <h1 class="logo" ><a href="index.html">Laptica</a></h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li>
+                    <a href="#quote" ><span id="openQuoteBtn" class="quote-btn">Get Quote</span></a>
+                </li>
+            </ul>
+
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+<!-- POPUP FORM -->
+<div id="quoteModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Request a Quote</h3>
+        <form id="quoteForm">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="tel">Phone Number *</label>
+            <input type="tel" id="tel" name="tel" placeholder="e.g. +233 54 123 4567" required>
+
+            <label for="service">Service Needed *</label>
+            <select id="service" name="service" required>
+                <option value="">Select Service</option>
+                <option value="laptop-repair">Laptop Repair</option>
+                <option value="device-purchase">Device/Accessory Purchase</option>
+                <option value="consultation">Consultation</option>
+            </select>
+
+            <label for="device-type">Device Type *</label>
+            <select id="device-type" name="device-type" >
+                <option value="">Select your device type</option>
+                <option value="laptop">Laptop</option>
+                <option value="Macbook">Macbook</option>
+                <option value="Gaming-laptop">Gaming Laptop</option>
+                <option value="Ultrabook">Ultrabook</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="message">Additional Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your request..."></textarea>
+
+            <!-- Urgent Level (hidden by default) -->
+            <div id="urgent-wrapper" style="display: none;">
+                <label for="urgent-level">Urgent Level</label>
+                <select id="urgent-level" name="urgent-level">
+                    <option value="">How urgent is repair</option>
+                    <option value="low">Low - Can wait a week</option>
+                    <option value="medium">Medium - Need it in 3 days</option>
+                    <option value="high">High - Need it tomorrow</option>
+                    <option value="emergency">Emergency - Same day service</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Quote Request</button>
+
+            <!-- Feedback Messages -->
+            <p id="formSuccess" class="feedback success" style="display:none;">✅ Your request submitted successfully!</p>
+            <p id="formError" class="feedback error" style="display:none;">❌ Something went wrong. Please try again.</p>
+        </form>
+    </div>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content">
+        <h2>Welcome to Laptica</h2>
+        <p>Your trusted source for premium laptops, essential accessories, and expert repair services. Everything you need for your computing journey, all in one place.</p>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section container">
+    <h2>Our Services</h2>
+    <p class="section-intro">Everything you need for your laptop and computing needs, backed by expert knowledge and reliable service.</p>
+
+    <div class="service-grid">
+        <div class="service-card">
+            <div class="service-icon">
+                💻
+            </div>
+            <h3>Premium Laptops</h3>
+            <ul>
+                <li>Latest Intel & AMD processors</li>
+                <li>High-resolution displays</li>
+                <li>Extended warranties</li>
+                <li>Performance optimization</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                🎧
+            </div>
+            <h3>Accessories</h3>
+            <ul>
+                <li>Wireless mice & keyboards</li>
+                <li>Laptop bags & cases</li>
+                <li>External monitors</li>
+                <li>Charging solutions</li>
+                <li>HDD and SSD Drives</li>
+            </ul>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">
+                🛠️
+            </div>
+            <h3>Expert Repairs</h3>
+            <ul>
+                <li>Screen Replacements</li>
+                <li>Hardware Upgrades</li>
+                <li>Software Installation</li>
+                <li>Virus removal</li>
+                <li>Data recovery</li>
+                <li>OS Installation (Windows, macOS, Linux)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section container">
+    <h2>Get In Touch</h2>
+    <p>Have questions about our products or need technical support? We're here to help!</p>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h3><i class="fas fa-phone-alt"></i> Phone</h3>
+            <p>+233 50 88 55 123</p>
+            <small>Call us for immediate support</small>
+        </div>
+        <div class="contact-card">
+            <h3><i class="fas fa-envelope"></i> Email</h3>
+            <p>info@laptica.com</p>
+            <small>Get in touch via email</small>
+        </div>
+        <div class="contact-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+            <p>Accra, Ghana</p>
+            <small>Visit our store & repair center</small>
+        </div>
+        <div class="contact-card">
+            <h3><i class="fas fa-clock"></i> Hours</h3>
+            <p>Mon-Fri: 9AM - 5PM<br>Sat: 10AM - 5PM<br>Sun: Closed</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- HELP CTA -->
+<section class="help-section">
+    <div class="container">
+        <h2>Need Immediate Help?</h2>
+        <p>Our expert technicians are ready to diagnose and fix your laptop issues. Book a consultation or bring your device to our repair center.</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Laptica</h3>
+            <p>Your trusted tech partner for premium laptops, accessories, and professional repair services.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li>Premium Laptops</li>
+                <li>Accessories</li>
+                <li>Expert Repairs</li>
+                <li>OS Installation</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li>+233 50 88 55 123</li>
+                <li>info@laptica.com</li>
+                <li>Accra, Ghana</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Laptica. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+</footer>
+
+// Back to the top
+<div class="backToTop">
+    <i class="fa-solid fa-angle-up"></i></div>
+
+<script src="js/app.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>
