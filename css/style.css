@@ -394,12 +394,16 @@ input, select, textarea {
     .burger {
         display: block;
     }
+
+    .help-section .container{
+        width: 90%;
+
+    }
 }
 
 @media (max-width: 475px){
     .help-section .container{
         width: 90%;
-
 
     }
 }
