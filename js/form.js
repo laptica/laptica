@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", () => {
                 modal.classList.add("active");
                 modal.style.display = "block"; // fallback
-                document.body.style.overflow = "hidden"; // disable scroll
+                document.body.style.overflow = "hidden"; // still blocks background
+                modal.style.overflowY = "auto";          // but allow modal content to scroll
             });
         }
     });
